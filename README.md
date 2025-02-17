@@ -35,7 +35,7 @@ Para executar a API foi utilizado o Microsoft Visual Studio 2022, e foi executad
 - Swashbuckle.AspNetCore é uma ferramenta do Swagger para gerar a documentação da API.
 - **Obs:** Decidiu-se utilizar versões mais antigas do .NET e dos pacotes devido a problemas de compatibilidade que estavam ocorrendo entre as versões mais novas do Pomelo e o .NET durante a configuração do "DBContext".
 
-### MySQL
+### MySQL 8.0.41
 - Para usar o MySQL foi criado um usuário de ID "root" e senha "senhaDesafio123%".
 - A base de dados "to_do_list" precisa ser criada direto pelo MySQL.
 - A tabela "tarefas" pode ser criada tanto pelo MySQL como também utilizando o Migrations no terminal do projeto no Microsoft Visual Studio Microsoft Visual Studio 2022.
