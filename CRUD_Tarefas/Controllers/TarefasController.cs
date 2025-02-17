@@ -55,7 +55,7 @@ namespace CRUD_Tarefas.Controllers
         }
 
         /// <summary>
-        /// Adiciona uma tarefa
+        /// Adicionar uma tarefa
         /// </summary>
         /// <param name="adicionarTarefaDto">Dados da tarefa</param>
         /// <returns>Tarefa recém-criada</returns>
