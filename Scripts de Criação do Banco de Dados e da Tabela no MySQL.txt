@@ -1,0 +1,8 @@
+create database to_do_list;
+use to_do_list;
+create table tarefas(
+  id INT auto_increment primary KEY,
+  titulo varchar(80),
+  descricao varchar(500),
+  data_vencimento date
+);
