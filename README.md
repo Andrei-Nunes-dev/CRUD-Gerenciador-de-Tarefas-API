@@ -30,8 +30,8 @@ Para executar a API foi utilizado o Microsoft Visual Studio, e foi executado em 
    > Swashbuckle.AspNetCore 6.6.2 
 
 - O Microsoft.EntityFrameworkCore, Design e Tools são usados para gerenciar e mapear os objetos-relacionais e também gerenciar as Migrations.
-- O Microsoft.AspNet.WebApi.Cors é usado para permitir que a aplicação se conecte a API
-- Pomelo.EntityFrameworkCore.MySql é usado para conectar a API ao MySQL
+- O Microsoft.AspNet.WebApi.Cors é usado para permitir que a aplicação se conecte a API.
+- Pomelo.EntityFrameworkCore.MySql é usado para conectar a API ao MySQL.
 - Swashbuckle.AspNetCore é uma ferramenta do Swagger para gerar a documentação da API.
 - **Obs:** Decidiu-se utilizar versões mais antigas do .NET e dos pacotes devido a problemas de compatibilidade que estavam ocorrendo entre as versões mais novas do Pomelo e o .NET durante a configuração do "DBContext".
 
