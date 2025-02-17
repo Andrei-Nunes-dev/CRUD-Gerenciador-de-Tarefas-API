@@ -16,15 +16,31 @@ namespace CRUD_Tarefas.Controllers
             this.dBContext = dBContext;
             
         }
+
+        /// <summary>
+        /// Obter todas as tarefas
+        /// </summary>
+        /// <returns>Coleção de tarefas</returns>
+        /// <response code="200">Sucesso</response>
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult GetAllTarefas()
         {
             var todasTarefas = dBContext.Tarefas.ToList();
             return Ok(todasTarefas);
         }
 
+        /// <summary>
+        /// Obter uma tarefa
+        /// </summary>
+        /// <param name="id">Identificador da tarefa</param>
+        /// <returns>Dados da tarefa</returns>
+        /// <response code="200">Sucesso</response>
+        /// <response code="404">Não encontrado</response>
         [HttpGet]
         [Route("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetTarefaPorId(int id)
         {
             var tarefa = dBContext.Tarefas.Find(id);
@@ -38,7 +54,14 @@ namespace CRUD_Tarefas.Controllers
 
         }
 
+        /// <summary>
+        /// Adiciona uma tarefa
+        /// </summary>
+        /// <param name="adicionarTarefaDto">Dados da tarefa</param>
+        /// <returns>Tarefa recém-criada</returns>
+        /// <response code = "200">Sucesso</response>
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult AdicionarTarefa(AdicionarTarefaDto adicionarTarefaDto)
         {
             var tarefaEntidade = new Tarefas()
@@ -55,8 +78,18 @@ namespace CRUD_Tarefas.Controllers
 
         }
 
+        /// <summary>
+        /// Atualizar uma tarefa
+        /// </summary>
+        /// <param name="id">Identificador da tarefa</param>
+        /// <param name="atualizarTarefaDto">Dados da tarefa</param>
+        /// <returns>Nada.</returns>
+        /// <response code = "404">Não encontrado</response>
+        /// <response code = "200">Sucesso</response>
         [HttpPut]
         [Route("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult AtualizarTarefa(int id, AtualizarTarefaDto atualizarTarefaDto)
         {
             var tarefa = dBContext.Tarefas.Find(id);
@@ -74,8 +107,17 @@ namespace CRUD_Tarefas.Controllers
 
         }
 
+        /// <summary>
+        /// Deletar uma tarefa
+        /// </summary>
+        /// <param name="id">Identificador da tarefa</param>
+        /// <returns>Nada.</returns>
+        /// <response code = "404">Não encontrado</response>
+        /// <response code = "200">Sucesso</response>
         [HttpDelete]
         [Route("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult DeletarTarefa(int id)
         {
             var tarefa = dBContext.Tarefas.Find(id);
